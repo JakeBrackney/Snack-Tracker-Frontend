@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
-const restaurantsURL = 'http://localhost:3001/api/restaurants'
+const restaurantsURL = 'http://localhost:3001/api/restaurants/'
 
 class ShowRestaurant extends Component {
   constructor(props) {
