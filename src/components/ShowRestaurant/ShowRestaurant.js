@@ -23,9 +23,9 @@ class ShowRestaurant extends Component {
           restaurant: []
         })
       })
-      .then ((res) => {
-        res.redirect('/')
-      })
+      // .then ((res) => {
+      //   res.redirect('/')
+      // })
       .catch((err) => {
         console.log(err)
       })
@@ -54,7 +54,7 @@ class ShowRestaurant extends Component {
   render() {
     return (
       <div key = {this.state.restaurant.id}>
-        <p>Name: {this.state.restaurant.name}</p>
+        <p>{this.state.restaurant.name}:</p>
         <p>Date Visited: {this.state.restaurant.dateVisited}</p>
         <p>Cuisine: {this.state.restaurant.cuisine}</p>
         <p>City: {this.state.restaurant.city}</p>
@@ -62,9 +62,8 @@ class ShowRestaurant extends Component {
         <p>Accolades: {this.state.restaurant.accolades}</p>
         <p>Notes: {this.state.restaurant.notes}</p>
         <Link to="/">   
-        <input onClick={this.handleDelete} 
-type='submit' value='Delete' />
-</Link>
+        <input onClick={this.handleDelete} type='submit' value='Delete' />
+        </Link>
       </div>
     );
   }
