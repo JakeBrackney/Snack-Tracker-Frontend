@@ -8,8 +8,8 @@ class RestaurantList extends Component {
             let list = this.props.restaurants.map(index => {
                 return (
                 <div key={index.name}>
-                    <a href={"/restaurants/" + index._id}><p>{index.name}</p></a>
-                    <p>{index.dateVisited}</p>           
+                    <p>Name: <a href={"/restaurants/" + index._id}>{index.name}</a></p>
+                    <p>Date Visited: {index.dateVisited}</p>           
                 </div>
                 )      
             })
