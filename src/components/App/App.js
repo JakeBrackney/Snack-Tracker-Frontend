@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
@@ -39,12 +39,12 @@ class App extends Component {
         <div className ='restaurantList'>
         < Switch>
             <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
-            <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
+             <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
           </Switch>
           </div>
         </main>
         
-
+        {/* <Route path = '/' render={()=> <Redirect to= '/restaurants'/>}/> */}
             {/* <Link to={"/restaurants/" + restaurant.name}>
               <p>{restaurant.name}</p>
             </Link> */}
