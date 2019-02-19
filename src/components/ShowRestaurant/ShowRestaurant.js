@@ -10,9 +10,28 @@ class ShowRestaurant extends Component {
     this.state = {
       restaurant: []
     }
-   
+   this.handleDelete = this.handleDelete.bind(this)
   }
-  componentDidMount () {
+
+  handleDelete() {
+    const restaurantId = this.props.match.params.id
+    const url = `${restaurantsURL}${restaurantId}`
+    axios.delete(url)
+      .then((res) => {
+        console.log(res.data)
+        this.setState({
+          restaurant: []
+        })
+      })
+      .then ((res) => {
+        res.redirect('/restaurants')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  componentDidMount() {
 
     const restaurantId = this.props.match.params.id
     console.log(`${restaurantsURL}${restaurantId}`)
@@ -42,6 +61,7 @@ class ShowRestaurant extends Component {
         <p>Budget: {this.state.restaurant.budget}</p>
         <p>Accolades: {this.state.restaurant.accolades}</p>
         <p>Notes: {this.state.restaurant.notes}</p>
+        <input onClick={this.handleDelete} type='submit' value='Delete' />
       </div>
     );
   }
