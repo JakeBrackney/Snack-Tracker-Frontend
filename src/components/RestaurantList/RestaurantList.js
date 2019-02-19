@@ -8,7 +8,7 @@ class RestaurantList extends Component {
             if(this.props.restaurants) {
             let list = this.props.restaurants.map(index => {
                 return (
-                <div key={index.name} className='restaurantContainer'>
+                <div key={index.name}>
                     <div className='restaurantList'>
                         <p className='restaurantName'>Restaurant: <a href={"/restaurants/" + index._id}>{index.name}</a></p>
                         {/* <p>Date Visited: {index.dateVisited}</p> */}

@@ -4,6 +4,10 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./background.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {

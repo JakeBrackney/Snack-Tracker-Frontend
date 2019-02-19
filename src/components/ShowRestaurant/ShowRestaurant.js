@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import './ShowRestaurant.css'
 
 const restaurantsURL = 'http://localhost:3001/api/restaurants/'
 
@@ -53,8 +54,8 @@ class ShowRestaurant extends Component {
 
   render() {
     return (
-      <div key = {this.state.restaurant.id}>
-        <p>{this.state.restaurant.name}:</p>
+      <div key = {this.state.restaurant.id} className='restaurantCard'>
+        <p className='restaurantTitle'>{this.state.restaurant.name}</p>
         <p>Date Visited: {this.state.restaurant.dateVisited}</p>
         <p>Cuisine: {this.state.restaurant.cuisine}</p>
         <p>City: {this.state.restaurant.city}</p>
@@ -62,7 +63,7 @@ class ShowRestaurant extends Component {
         <p>Accolades: {this.state.restaurant.accolades}</p>
         <p>Notes: {this.state.restaurant.notes}</p>
         <Link to="/">   
-        <input onClick={this.handleDelete} type='submit' value='Delete' />
+          <input onClick={this.handleDelete} type='submit' value='Delete' />
         </Link>
       </div>
     );
