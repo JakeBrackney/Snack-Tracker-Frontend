@@ -35,14 +35,13 @@ class ShowRestaurant extends Component {
   render() {
     return (
       <div key = {this.state.restaurant.id}>
-      <p>{this.state.restaurant.name}</p>
-      <p>{this.state.restaurant.dateVisited}</p>
-      <p>{this.state.restaurant.cuisine}</p>
-      <p>{this.state.restaurant.city}</p>
-      <p>{this.state.restaurant.budget}</p>
-      <p>{this.state.restaurant.accolades}</p>
-      <p>{this.state.restaurant.notes}</p>
-      
+        <p>Name: {this.state.restaurant.name}</p>
+        <p>Date Visited: {this.state.restaurant.dateVisited}</p>
+        <p>Cuisine: {this.state.restaurant.cuisine}</p>
+        <p>City: {this.state.restaurant.city}</p>
+        <p>Budget: {this.state.restaurant.budget}</p>
+        <p>Accolades: {this.state.restaurant.accolades}</p>
+        <p>Notes: {this.state.restaurant.notes}</p>
       </div>
     );
   }
