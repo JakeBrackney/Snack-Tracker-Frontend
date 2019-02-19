@@ -24,7 +24,7 @@ class ShowRestaurant extends Component {
         })
       })
       .then ((res) => {
-        res.redirect('/restaurants')
+        res.redirect('/')
       })
       .catch((err) => {
         console.log(err)
@@ -61,7 +61,10 @@ class ShowRestaurant extends Component {
         <p>Budget: {this.state.restaurant.budget}</p>
         <p>Accolades: {this.state.restaurant.accolades}</p>
         <p>Notes: {this.state.restaurant.notes}</p>
-        <input onClick={this.handleDelete} type='submit' value='Delete' />
+        <Link to="/">   
+        <input onClick={this.handleDelete} 
+type='submit' value='Delete' />
+</Link>
       </div>
     );
   }
