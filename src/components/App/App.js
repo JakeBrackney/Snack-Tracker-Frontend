@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import RestaurantList from '../RestaurantList/RestaurantList'
-import ShowRestauarnt from '../ShowRestaurant/ShowRestaurant'
+import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
 
 class App extends Component {

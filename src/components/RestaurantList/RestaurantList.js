@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+// import axios from 'axios'
 
 class RestaurantList extends Component {
         render() {
@@ -21,14 +21,4 @@ class RestaurantList extends Component {
         }
     }
     
-
-        console.log
-        return (
-            <div>
-                
-            </div>
-        );
-    }
-}
-
 export default RestaurantList;
