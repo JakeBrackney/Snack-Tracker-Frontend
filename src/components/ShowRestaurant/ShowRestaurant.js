@@ -62,7 +62,7 @@ class ShowRestaurant extends Component {
         <p>Budget: {this.state.restaurant.budget}</p>
         <p>Accolades: {this.state.restaurant.accolades}</p>
         <p>Notes: {this.state.restaurant.notes}</p>
-        <Link to="/">   
+        <Link to="/restaurants/">   
           <input onClick={this.handleDelete} type='submit' value='Delete' />
         </Link>
       </div>
