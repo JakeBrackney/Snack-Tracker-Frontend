@@ -9,15 +9,16 @@ class RestaurantList extends Component {
             let list = this.props.restaurants.map(index => {
                 return (
                 <div key={index.name}>
-                    <div className='restaurantList'>
-                        <p className='restaurantName'>Restaurant: <a href={"/restaurants/" + index._id}>{index.name}</a></p>
+                    <ul>
+                        <li><a href={"/restaurants/" + index._id}>{index.name}</a></li>
                         {/* <p>Date Visited: {index.dateVisited}</p> */}
-                    </div>
+                    </ul>
                 </div>
                 )      
             })
             return (
                 <div>
+                    <h1>Restaurants</h1>
                     {list}
                 </div>
             );}

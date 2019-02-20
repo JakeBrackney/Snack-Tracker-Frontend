@@ -29,29 +29,19 @@ class App extends Component {
   }
 
   render() {
-  // let restaurantList = this.props.data.map(stock => {
     return (
       <div className="App">
         <header className="App-header">
           Snack Tracker
         </header>
         <main> 
-        <div className ='restaurantList'>
-        < Switch>
-            <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
-             <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
-          </Switch>
+          <div className ='restaurantList'>
+            < Switch>
+              <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
+              <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
+            </Switch>
           </div>
         </main>
-        
-        {/* <Route path = '/' render={()=> <Redirect to= '/restaurants'/>}/> */}
-            {/* <Link to={"/restaurants/" + restaurant.name}>
-              <p>{restaurant.name}</p>
-            </Link> */}
-        
-        <div className="restaurant-list">
-          {/* {restaurantList} */}
-        </div>
       </div>
     )
   }

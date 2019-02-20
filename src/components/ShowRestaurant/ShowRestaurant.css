@@ -1,11 +1,10 @@
 .restaurantCard {
-  background: rgba(255, 255, 255, .8);
-  padding: 15px;
+  /* padding: 15px; */
   border-radius: 7px
 }
 
 .restaurantTitle{
-  font-size: 24px;
+  font-size: 36px;
   margin: 0 auto;
   font-weight: bold;
   text-decoration: underline;
