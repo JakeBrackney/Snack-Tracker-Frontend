@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Redirect} from 'react-router-dom'
+// import { Redirect} from 'react-router-dom'
 import './ShowRestaurant.css'
 import { CLIENT_URL } from '../../constants'
 
@@ -53,8 +53,9 @@ class ShowRestaurant extends Component {
   }
 
   render() {
+    
     return (
-      <div key = {this.state.restaurant.id} className='restaurantCard'>
+      <div key={this.state.restaurant.id} className='restaurantCard'>
         <p className='restaurantTitle'>{this.state.restaurant.name}</p>
         <p>Date Visited: {this.state.restaurant.dateVisited}</p>
         <p>Cuisine: {this.state.restaurant.cuisine}</p>
@@ -67,4 +68,5 @@ class ShowRestaurant extends Component {
     );
   }
 }
+
 export default ShowRestaurant;
