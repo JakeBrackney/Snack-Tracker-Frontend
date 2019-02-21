@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect} from 'react-router-dom'
 import './ShowRestaurant.css'
-import { CLIENT_URL } from '../../../constants'
+import { CLIENT_URL } from '../../constants'
 
 
 class ShowRestaurant extends Component {

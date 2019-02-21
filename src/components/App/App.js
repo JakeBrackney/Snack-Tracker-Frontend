@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
-import { CLIENT_URL } from '../../../constants'
+import { CLIENT_URL } from '../../constants'
 
 
 
