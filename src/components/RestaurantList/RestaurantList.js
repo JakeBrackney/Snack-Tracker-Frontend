@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import './RestaurantList.css'
+import { Link } from 'react-router-dom'
 // import axios from 'axios'
 
 class RestaurantList extends Component {
+
+    constructor() {
+        super()
+    
+        this.handleRenderNewForm = this.handleRenderNewForm.bind(this)
+    }
+
+    handleRenderNewForm() {
+        //unmount RestaurantList
+        //redirect to NewRestaurant.js
+    }
+
         render() {
             console.log(this.props.restaurants)
             if(this.props.restaurants) {
@@ -20,6 +33,9 @@ class RestaurantList extends Component {
                 <div>
                     <h1>Restaurants</h1>
                     {list}
+                    <Link to='/new'>
+                        <button onClick={this.handleRenderNewForm}>New Restaurant</button>
+                    </Link>
                 </div>
             );}
         }
