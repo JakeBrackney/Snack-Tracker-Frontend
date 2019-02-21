@@ -14,24 +14,6 @@ class ShowRestaurant extends Component {
    this.handleDelete = this.handleDelete.bind(this)
   }
 
-  handleDelete() {
-    const restaurantId = this.props.match.params.id
-    const url = `${restaurantsURL}${restaurantId}`
-    axios.delete(url)
-      .then((res) => {
-        console.log(res.data)
-        this.setState({
-          restaurant: []
-        })
-      })
-      // .then ((res) => {
-      //   res.redirect('/')
-      // })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-
   componentDidMount() {
 
     const restaurantId = this.props.match.params.id
@@ -47,6 +29,21 @@ class ShowRestaurant extends Component {
         })
         console.log(this.state.restaurant)
       })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  handleDelete() {
+    const { restaurantData } = this.state
+    const restaurantId = this.props.match.params.id
+    const url = `${restaurantsURL}${restaurantId}`
+    this.setState({
+      restaurantData: restaurantData.filter(r => r._id !== restaurantId)
+    })
+    axios.delete(url, {
+      data: { id: restaurantId }
+    })
       .catch((err) => {
         console.log(err)
       })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
