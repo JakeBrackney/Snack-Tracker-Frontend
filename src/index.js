@@ -8,7 +8,7 @@ import App from '../src/components/App/App'
 
 ReactDOM.render(
   <Router>
-  <App />
+    <App />
   </Router>, 
   document.getElementById('root'));
 
