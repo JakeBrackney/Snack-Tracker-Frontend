@@ -4,8 +4,9 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
+import { CLIENT_URL } from '../../../constants'
 
-const restaurantsURL = 'https://snack-track-api.herokuapp.com/api/restaurants'
+
 
 class App extends Component {
 
@@ -18,7 +19,7 @@ class App extends Component {
 
   componentDidMount () {
     console.log("did mount")
-    axios.get('https://snack-track-api.herokuapp.com/api/restaurants')
+    axios.get(CLIENT_URL)
       .then((res) => {
         console.log(res.data)
         this.setState({

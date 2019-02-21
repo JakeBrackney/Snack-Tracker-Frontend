@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect} from 'react-router-dom'
 import './ShowRestaurant.css'
+import { CLIENT_URL } from '../../../constants'
 
-const restaurantsURL = 'https://snack-track-api.herokuapp.com/api/restaurants'
 
 class ShowRestaurant extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class ShowRestaurant extends Component {
 
   handleDelete() {
     const restaurantId = this.props.match.params.id
-    const url = `${restaurantsURL}${restaurantId}`
+    const url = `${CLIENT_URL}${restaurantId}`
     axios.delete(url)
       .then((res) => {
         console.log(res.data)
@@ -35,8 +35,8 @@ class ShowRestaurant extends Component {
   componentDidMount() {
 
     const restaurantId = this.props.match.params.id
-    console.log(`${restaurantsURL}${restaurantId}`)
-    const url = `${restaurantsURL}${restaurantId}`
+    console.log(`${CLIENT_URL}${restaurantId}`)
+    const url = `${CLIENT_URL}${restaurantId}`
 
     console.log("did mount in showpage")
     axios.get(url)
