@@ -5,7 +5,7 @@ import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
 
-const restaurantsURL = 'http://localhost:3001/api/restaurants/'
+const restaurantsURL = 'https://snack-track-api.herokuapp.com/api/restaurants'
 
 class App extends Component {
 
@@ -15,36 +15,6 @@ class App extends Component {
       restaurants: []
     }
   }
-
-  deleteRestaurant() {
-    const restaurantId = this.props.params.id
-    const url = `${restaurantsURL}${restaurantId}`
-    axios.delete(url)
-      .then((res) => {
-        console.log(res.data)
-        this.setState({
-          restaurant: [],
-          redirect: true
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-   
-    // pass to ShowRestaurant as prop
-    // call it onclick
-    // axios.delete by id
-    // axios.delete(url)
-//     .then((res) => {
-//       console.log(res.data)
-//       this.setState({
-//         restaurant: [],
-//         redirect: true 
-//       // set app.js state to remove specific restaurant by id
-//   }) 
-// })
-// }; 
 
   componentDidMount () {
     console.log("did mount")
@@ -70,7 +40,7 @@ class App extends Component {
         <main> 
           <div className ='restaurantList'>
             < Switch>
-              <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant deleteRestaurant={this.deleteRestaurant} {...routerProps} {...this.state} />} />
+              <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
               <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
             </Switch>
           </div>
@@ -79,5 +49,6 @@ class App extends Component {
     )
   }
 }
+
 
 export default App;
