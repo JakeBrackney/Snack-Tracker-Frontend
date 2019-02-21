@@ -5,6 +5,8 @@ import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
 
+const restaurantsURL = 'https://snack-track-api.herokuapp.com/api/restaurants'
+
 class App extends Component {
 
   constructor(props) {
@@ -12,13 +14,6 @@ class App extends Component {
     this.state= {
       restaurants: []
     }
-  }
-
-  deleteRestaurant(id) {
-    // pass to ShowRestaurant as prop
-    // call it onclick
-    // axios.delete by id
-    // set app.js state to remove specific restaurant by id
   }
 
   componentDidMount () {
@@ -45,7 +40,7 @@ class App extends Component {
         <main> 
           <div className ='restaurantList'>
             < Switch>
-              <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant deleteRestaurant={this.deleteRestaurant} {...routerProps} {...this.state} />} />
+              <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
               <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
             </Switch>
           </div>
@@ -54,5 +49,6 @@ class App extends Component {
     )
   }
 }
+
 
 export default App;
