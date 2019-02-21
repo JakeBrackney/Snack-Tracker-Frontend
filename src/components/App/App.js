@@ -5,6 +5,8 @@ import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
 import axios from 'axios'
 
+const restaurantsURL = 'http://localhost:3001/api/restaurants/'
+
 class App extends Component {
 
   constructor(props) {
@@ -14,12 +16,35 @@ class App extends Component {
     }
   }
 
-  deleteRestaurant(id) {
+  deleteRestaurant() {
+    const restaurantId = this.props.params.id
+    const url = `${restaurantsURL}${restaurantId}`
+    axios.delete(url)
+      .then((res) => {
+        console.log(res.data)
+        this.setState({
+          restaurant: [],
+          redirect: true
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+   
     // pass to ShowRestaurant as prop
     // call it onclick
     // axios.delete by id
-    // set app.js state to remove specific restaurant by id
-  }
+    // axios.delete(url)
+//     .then((res) => {
+//       console.log(res.data)
+//       this.setState({
+//         restaurant: [],
+//         redirect: true 
+//       // set app.js state to remove specific restaurant by id
+//   }) 
+// })
+// }; 
 
   componentDidMount () {
     console.log("did mount")

@@ -33,8 +33,13 @@ class ShowRestaurant extends Component {
   }
 
   componentDidMount() {
-    // console.log()
-    const restaurantId = this.props.match.params.id
+    console.log("didMount")
+   restaurantId =  this.props.deleteRestaurant
+    axios.get(url).then((res => {
+      this.setState({ restaurant: [],
+        redirect: true})
+    })
+  
     // filter on id
 
     
@@ -53,9 +58,7 @@ class ShowRestaurant extends Component {
     //   .catch((err) => {
     //     console.log(err)
     //   })
-    this.props.deleteRestaurant(this.props.match.params.id)
-  }
-
+   
   render() {
     console.log('showrestaurant props', this.props)
     if(this.state.redirect) {
