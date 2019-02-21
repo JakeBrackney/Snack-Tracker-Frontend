@@ -18,7 +18,7 @@ class App extends Component {
 
   componentDidMount () {
     console.log("did mount")
-    axios.get('http://localhost:3001/api/restaurants')
+    axios.get('https://snack-track-api.herokuapp.com/api/restaurants')
       .then((res) => {
         console.log(res.data)
         this.setState({
