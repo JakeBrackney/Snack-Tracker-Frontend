@@ -2,7 +2,7 @@
 
 
 ## Description
-Snack Tracker is an app where users can keep track of their favorite and most memorable item on the menu from various restaurants they've been to. Anyone can comment on a snack post and share their ideas about it.
+Snack Tracker is an app where users can keep track of their favorite restaurants including memorable items on the menu, awards won, budget, location, and when they went. Anyone can comment on a snack post and share their ideas about it.
 
 ## Preview
 
@@ -11,34 +11,34 @@ Snack Tracker is an app where users can keep track of their favorite and most me
 ![ScreenShot](public/images/instance.png)
 
 
-## Features
-- Users have the option to delete snack posts
-- Users can comment on snack posts
-- Each comment displays the date and time it was created and its content
+## Functionality
+Users are able to see a list of their restaurants, are able to see details about a single restaurant, are able to comment on each restaurant, and are able to delete a restaurant.
  
 
-## Used 
-- Node
-- Express
-- React 
-- CSS
-- HTML
-- Javascript
-- MongoDB
+## Technologies Used
+The application as a whole is built using a MERN stack. The front end views are rendered using React. We tied the front end and back end using Cors and deployed the front end to Surge.
 
 
 ## Installed dependencies 
 
-- Node 
-- Mongoose 
-- Express 
+- Mongoose
+- Express
 - React 
+- Node
 - Axios 
+- prop-types
+- react-dom
+- react-router-dom
+- react-scripts
 
+## Instalation
 
+Fork and clone this repo and run the command `npm install` in your CLI. We are not accepting contributions at this time.
 
-## App Improvements
+## Future App Improvements
 
-- CSS Styling 
-- Have users be able to create new snack posts from the browser
+- Fix the delete issue. Users may delete a restaurant, but will have to press the back button and refresh the   Restaurant List page in the browser before seeing that a restaurant has been deleted. Delete technically       works, but the rendering/redirecting is buggy.
+- Better Design
+- Enable users to create new snack posts from the browser
+- Utilize the Google Maps API to display the location of each restaurant on each individual restaurant's show   page.
 

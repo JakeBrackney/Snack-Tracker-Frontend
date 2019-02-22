@@ -18,9 +18,10 @@ class Comment extends Component {
 
   render() {
     return (
-      <li>
-        <i>{ this.state.comment.dateVisited }</i> - { this.state.comment.content }
+      <li className="comment">
+        <i>{ this.props.comment.dateVisited }</i> - { this.props.comment.content }
       </li>
+
     );
   }
 }

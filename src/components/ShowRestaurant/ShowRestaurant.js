@@ -10,7 +10,9 @@ class ShowRestaurant extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      restaurant: []
+      restaurant: {
+        comments: []
+      }
     }
    this.handleDelete = this.handleDelete.bind(this)
    this.handleUpdate = this.handleUpdate.bind(this)
@@ -39,11 +41,9 @@ class ShowRestaurant extends Component {
     const restaurantId = this.props.match.params.id
     const url = `${CLIENT_URL}${restaurantId}`
     const restaurant = this.state.restaurant;
-    const comment = {
-      content: this.state.newComment,
-      dateVisited: new Date().toString()
-    }
-    restaurant.comments.push(comment);
+    restaurant.newComment = this.state.newComment
+    restaurant.dateVisited = new Date().toString()
+
     var self = this;
     axios.put(url, restaurant)
       .then((res) => {
@@ -87,11 +87,11 @@ class ShowRestaurant extends Component {
         <p>City: {this.state.restaurant.city}</p>
         <p>Budget: {this.state.restaurant.budget}</p>
         <p>Accolades: {this.state.restaurant.accolades}</p>
-        <p>Notes: {this.state.restaurant.notes}</p>
+        <p>Snack: {this.state.restaurant.snacks}</p>
         <p className="comments_title">Comments: </p>
         <ul className="container">
-          { (this.state.restaurant.comments) ? this.state.restaurant.comments.map((comment, index) => {
-            return <li className="comment"><Comment comment={comment} key={index} /></li>
+          { (this.state.restaurant.comments.length) ? this.state.restaurant.comments.map((comment, index) => {
+            return <Comment comment={comment} key={index} />
           }) : null } 
         </ul>
         <div>
@@ -100,9 +100,7 @@ class ShowRestaurant extends Component {
             this.setState({ newComment: item.target.value }) 
             console.log(item.target.value);
             } } />
-          <button onClick={ () => {
-            this.handleUpdate();
-          } }>Post</button>
+          <button onClick={this.handleUpdate}>Post</button>
         </div>
         <Link to="/">   
           <input onClick={this.handleDelete} type='submit' value='Delete' />
