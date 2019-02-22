@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import './ShowRestaurant.css'
+import Comment from '../Comment/Comment'
 
 const restaurantsURL = 'http://localhost:3001/api/restaurants/'
 
@@ -12,6 +13,7 @@ class ShowRestaurant extends Component {
       restaurant: []
     }
    this.handleDelete = this.handleDelete.bind(this)
+   this.handleUpdate = this.handleUpdate.bind(this)
   }
 
   handleDelete() {
@@ -21,12 +23,36 @@ class ShowRestaurant extends Component {
       .then((res) => {
         console.log(res.data)
         this.setState({
-          restaurant: []
+          restaurant: [],
+          newComment: ""
         })
       })
       // .then ((res) => {
       //   res.redirect('/')
       // })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  handleUpdate() {
+    const restaurantId = this.props.match.params.id
+    const url = `${restaurantsURL}${restaurantId}`
+    const restaurant = this.state.restaurant;
+    const comment = {
+      content: this.state.newComment,
+      dateVisited: new Date().toString()
+    }
+    restaurant.comments.push(comment);
+    var self = this;
+    axios.put(url, restaurant)
+      .then((res) => {
+        console.log(res.data)
+        self.setState({
+          restaurant: res.data,
+          newComment: ""
+        })
+      })
       .catch((err) => {
         console.log(err)
       })
@@ -62,6 +88,22 @@ class ShowRestaurant extends Component {
         <p>Budget: {this.state.restaurant.budget}</p>
         <p>Accolades: {this.state.restaurant.accolades}</p>
         <p>Notes: {this.state.restaurant.notes}</p>
+        <p>Comments: </p>
+        <ul>
+          { (this.state.restaurant.comments) ? this.state.restaurant.comments.map((comment, index) => {
+            return <Comment comment={comment} key={index} />
+          }) : null }
+        </ul>
+        <div>
+          New Comment: 
+          <input type="text" value={this.state.newComment} onChange={ (item) => { 
+            this.setState({ newComment: item.target.value }) 
+            console.log(item.target.value);
+            } } />
+          <button onClick={ () => {
+            this.handleUpdate();
+          } }>Post</button>
+        </div>
         <Link to="/">   
           <input onClick={this.handleDelete} type='submit' value='Delete' />
         </Link>
