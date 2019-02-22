@@ -2,7 +2,7 @@
 
 
 ## Description
-Snack Tracker is an app where users can keep track of their favorite restaurants including memorable items on the menu, awards won, budget, location, and when they went. Anyone can comment on a snack post and share their ideas about it.
+Have you ever been to a restaurant you loved but there was one item you'd go back for all by itself? Snack Tracker is an app where users can keep track of their favorite and most memorable item on the menu from various restaurants they've visited. Anyone can comment on a snack post and share their ideas about it. This repo contains the front end of the application. 
 
 ## Preview
 
