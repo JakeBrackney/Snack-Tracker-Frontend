@@ -29,9 +29,6 @@ class ShowRestaurant extends Component {
           newComment: ""
         })
       })
-      // .then ((res) => {
-      //   res.redirect('/')
-      // })
       .catch((err) => {
         console.log(err)
       })

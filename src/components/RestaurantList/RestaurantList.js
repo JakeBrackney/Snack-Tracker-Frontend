@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './RestaurantList.css'
-// import axios from 'axios'
 
 class RestaurantList extends Component {
         render() {
@@ -11,7 +10,6 @@ class RestaurantList extends Component {
                 <div key={index.name}>
                     <ul>
                         <li><a href={"/restaurants/" + index._id}>{index.name}</a></li>
-                        {/* <p>Date Visited: {index.dateVisited}</p> */}
                     </ul>
                 </div>
                 )      
