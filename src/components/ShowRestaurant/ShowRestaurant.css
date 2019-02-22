@@ -9,3 +9,20 @@
   font-weight: bold;
   text-decoration: underline;
 }
+
+.container {
+  border-top: 1px solid black;
+  padding: 25px;
+
+}
+
+.comments_title {
+  margin-top: 75px;
+  color: blue;
+}
+
+
+.comment {
+  border-bottom: 1px solid black;
+  padding: 25px;
+}
