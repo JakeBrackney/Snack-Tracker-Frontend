@@ -88,11 +88,11 @@ class ShowRestaurant extends Component {
         <p>Budget: {this.state.restaurant.budget}</p>
         <p>Accolades: {this.state.restaurant.accolades}</p>
         <p>Notes: {this.state.restaurant.notes}</p>
-        <p>Comments: </p>
-        <ul>
+        <p className="comments_title">Comments: </p>
+        <ul className="container">
           { (this.state.restaurant.comments) ? this.state.restaurant.comments.map((comment, index) => {
-            return <Comment comment={comment} key={index} />
-          }) : null }
+            return <li className="comment"><Comment comment={comment} key={index} /></li>
+          }) : null } 
         </ul>
         <div>
           New Comment: 
