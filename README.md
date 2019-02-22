@@ -29,7 +29,6 @@ Snack Tracker is an app where users can keep track of their favorite and most me
 
 ## Installed dependencies 
 
-- 
 - Node 
 - Mongoose 
 - Express 
