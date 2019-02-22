@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
+import NewRestaurant from '../NewRestaurant/NewRestaurant'
 import axios from 'axios'
 
 const restaurantsURL = 'https://snack-track-api.herokuapp.com/api/restaurants'
@@ -42,6 +43,8 @@ class App extends Component {
             < Switch>
               <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
               <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
+              <Route path='/new-restaurant'
+              component= {NewRestaurant}/>
             </Switch>
           </div>
         </main>
