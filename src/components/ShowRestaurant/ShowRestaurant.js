@@ -3,8 +3,8 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import './ShowRestaurant.css'
 import Comment from '../Comment/Comment'
+import { CLIENT_URL } from '../../constants'
 
-const restaurantsURL = 'http://localhost:3001/api/restaurants/'
 
 class ShowRestaurant extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class ShowRestaurant extends Component {
 
   handleDelete() {
     const restaurantId = this.props.match.params.id
-    const url = `${restaurantsURL}${restaurantId}`
+    const url = `${CLIENT_URL}${restaurantId}`
     axios.delete(url)
       .then((res) => {
         console.log(res.data)
@@ -37,7 +37,7 @@ class ShowRestaurant extends Component {
 
   handleUpdate() {
     const restaurantId = this.props.match.params.id
-    const url = `${restaurantsURL}${restaurantId}`
+    const url = `${CLIENT_URL}${restaurantId}`
     const restaurant = this.state.restaurant;
     const comment = {
       content: this.state.newComment,
@@ -61,8 +61,8 @@ class ShowRestaurant extends Component {
   componentDidMount() {
 
     const restaurantId = this.props.match.params.id
-    console.log(`${restaurantsURL}${restaurantId}`)
-    const url = `${restaurantsURL}${restaurantId}`
+    console.log(`${CLIENT_URL}${restaurantId}`)
+    const url = `${CLIENT_URL}${restaurantId}`
 
     console.log("did mount in showpage")
     axios.get(url)
