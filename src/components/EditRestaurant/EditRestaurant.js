@@ -45,39 +45,40 @@ class EditRestaurant extends Component {
   render() {
     return (
         <div class = "container"> 
-        <h3 class = "panel-title">
-        EDIT RESTAURANT</h3>
-        </div> 
-        <div class="panel-body">
-            <h4><Link to={`/show/${this.state.restaurant._id}`}> Restaurant List</Link></h4>
-            </div>  
-            <form onSubmit={this.onSubmit}>
-              <div class="form-group">
-                <label for="dateVisited">Date Visited:</label>
-                <input type="text" class="form-control" name="dateVisited" value={this.state.restaurant.dateVisited} onChange={this.onChange} placeholder="date visited" />
-              </div>
-              <div class="form-group">
-                <label for="cuisine">Cuisine:</label>
-                <input type="text" class="form-control" name="cuisine" value={this.state.restaurant.cuisine} onChange={this.onChange} placeholder="Title" />
-              </div>
-              <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" class="form-control" name="city" value={this.state.restaurant.city} onChange={this.onChange} placeholder="City" />
-              </div>
-              <div class="form-group">
-                <label for="budget">Budget:</label>
-                <input type="text" class="form-control" name="budget" value={this.state.restaurant.budget} onChange={this.onChange} placeholder="Budget" />
-              </div>
-              <div class="form-group">
-                <label for="accolades">Accolades:</label>
-                <input type="text" class="form-control" name="accolades" value={this.state.restaurant.accolades} onChange={this.onChange} placeholder="Accolades" />
-              </div>
-              <div class="form-group">
-                <label for="snack">Snack:</label>
-                <input type="text" class="form-control" name="snack" value={this.state.restaurant.snack} onChange={this.onChange} placeholder="snack" />
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>           
+          <h3 class = "panel-title">EDIT RESTAURANT</h3>
+        
+        
+          <div class="panel-body">
+              <h4><Link to={`/show/${this.state.restaurant._id}`}> Restaurant List</Link></h4>
+          </div>  
+          <form onSubmit={this.onSubmit}>
+            <div class="form-group">
+              <label for="dateVisited">Date Visited:</label>
+              <input type="text" class="form-control" name="dateVisited" value={this.state.restaurant.dateVisited} onChange={this.onChange} placeholder="date visited" />
+            </div>
+            <div class="form-group">
+              <label for="cuisine">Cuisine:</label>
+              <input type="text" class="form-control" name="cuisine" value={this.state.restaurant.cuisine} onChange={this.onChange} placeholder="Title" />
+            </div>
+            <div class="form-group">
+              <label for="city">City:</label>
+              <input type="text" class="form-control" name="city" value={this.state.restaurant.city} onChange={this.onChange} placeholder="City" />
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget:</label>
+              <input type="text" class="form-control" name="budget" value={this.state.restaurant.budget} onChange={this.onChange} placeholder="Budget" />
+            </div>
+            <div class="form-group">
+              <label for="accolades">Accolades:</label>
+              <input type="text" class="form-control" name="accolades" value={this.state.restaurant.accolades} onChange={this.onChange} placeholder="Accolades" />
+            </div>
+            <div class="form-group">
+              <label for="snack">Snack:</label>
+              <input type="text" class="form-control" name="snack" value={this.state.restaurant.snack} onChange={this.onChange} placeholder="snack" />
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>      
+        </div>      
     )
   }
 }
