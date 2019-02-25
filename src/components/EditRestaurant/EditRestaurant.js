@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { CLIENT_URL } from "../../constants";
+import { Link } from 'react-router-dom';
 
 class EditRestaurant extends Component {
   constructor(props) {
@@ -46,10 +47,8 @@ class EditRestaurant extends Component {
     return (
         <div class = "container"> 
           <h3 class = "panel-title">EDIT RESTAURANT</h3>
-        
-        
           <div class="panel-body">
-              <h4><Link to={`/show/${this.state.restaurant._id}`}> Restaurant List</Link></h4>
+              <h4><Link to={`/restaurants/${this.state.restaurant._id}`}> Restaurant List</Link></h4>
           </div>  
           <form onSubmit={this.onSubmit}>
             <div class="form-group">
