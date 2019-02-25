@@ -79,7 +79,7 @@ class ShowRestaurant extends Component {
     return (
       <div key = {this.state.restaurant.id} className='restaurantCard'>
         <p className='restaurantTitle'>{this.state.restaurant.name}</p>
-        <p>Date Visited: {this.state.restaurant.dateVisited}</p>
+        {/* <p>Date Visited: {this.state.restaurant.dateVisited}</p> */}
         <p>Cuisine: {this.state.restaurant.cuisine}</p>
         <p>City: {this.state.restaurant.city}</p>
         <p>Budget: {this.state.restaurant.budget}</p>
