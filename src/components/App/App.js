@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import RestaurantList from '../RestaurantList/RestaurantList'
 import ShowRestaurant from '../ShowRestaurant/ShowRestaurant'
+import EditRestaurant from '../EditRestaurant/EditRestaurant'
 import axios from 'axios'
 import { CLIENT_URL } from '../../constants'
 
@@ -42,6 +43,7 @@ class App extends Component {
           <div className ='restaurantList'>
             < Switch>
               <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
+              <Route path = '/edit/:id' component = {EditRestaurant}/>
               <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
             </Switch>
           </div>
