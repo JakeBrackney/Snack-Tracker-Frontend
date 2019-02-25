@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { CLIENT_URL } from '../../constants'
+import Axios from 'axios';
 
 class Comment extends Component {
 
@@ -8,7 +10,23 @@ class Comment extends Component {
     this.state = {
       comment: props.comment
     };
+    this.handleRetrieveComment = this.handleRetrieveComment.bind(this)
   }
+
+  handleRetrieveComment() {
+    const commentId = this.props.comment.id
+    const url =`${CLIENT_URL}${commentId}`
+    const comment = this.state.comment;
+
+    Axios.get(url, comment)
+    .then((res) => {
+      console.log("button clicked")
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -19,7 +37,8 @@ class Comment extends Component {
   render() {
     return (
       <li className="comment">
-        <i>{ this.props.comment.dateVisited }</i> - { this.props.comment.content }
+        <i>{ this.props.comment.content }</i> - { this.props.comment.dateVisited }
+        <button onClick={this.handleRetrieveComment}>Edit</button>
       </li>
 
     );
