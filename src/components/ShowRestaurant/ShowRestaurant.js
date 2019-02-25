@@ -16,6 +16,7 @@ class ShowRestaurant extends Component {
     }
    this.handleDelete = this.handleDelete.bind(this)
    this.handleUpdate = this.handleUpdate.bind(this)
+   this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   handleDelete() {
@@ -54,6 +55,9 @@ class ShowRestaurant extends Component {
         console.log(err)
       })
   }
+
+
+
 
   componentDidMount() {
 
