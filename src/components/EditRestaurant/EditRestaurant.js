@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { CLIENT_URL } from "../../constants";
-// import { Link } from 'react-router-dom';
 
 class EditRestaurant extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       restaurant: []
     };
   }
+
   componentDidMount() {
     const restaurantId = this.props.match.params.id;
     console.log(`${CLIENT_URL}${restaurantId}`);
@@ -48,14 +49,13 @@ class EditRestaurant extends Component {
       
       this.props.history.push("/restaurants/" + this.props.match.params.id)
     })
-
   }
+
   render() {
     return (
         <div className="container"> 
           <h3 className="panel-title">EDIT RESTAURANT</h3>
           <div className="panel-body">
-              {/* <h4><Link to={`/restaurants/${this.state.restaurant._id}`}> Restaurant List</Link></h4> */}
           </div>  
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
