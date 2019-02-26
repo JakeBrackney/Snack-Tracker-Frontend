@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { CLIENT_URL } from "../../constants";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class EditRestaurant extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class EditRestaurant extends Component {
     const restaurantId = this.props.match.params.id;
     console.log(`${CLIENT_URL}${restaurantId}`);
     const url = `${CLIENT_URL}${restaurantId}`;
+    console.log(url)
 
     axios
       .get(url)
@@ -36,10 +37,16 @@ class EditRestaurant extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
+    const restaurantId = this.props.match.params.id;
+    const url = `${CLIENT_URL}${restaurantId}`;
+    console.log(this.props.match.params.id);
+    
     const {dateVisited, cuisine, city, budget, accolades, snacks} = this.state.restaurant 
-    axios.put('url' + this.props.match.params.id, {dateVisited, cuisine, city, budget, accolades, snacks })
+    axios.put(url, {dateVisited, cuisine, city, budget, accolades, snacks })
     .then((result)=> {
-      this.props.history.push("/restaurants" + this.props.match.params.id)
+      console.log(result);
+      
+      this.props.history.push("/restaurants/" + this.props.match.params.id)
     })
 
   }
