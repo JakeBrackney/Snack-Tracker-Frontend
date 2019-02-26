@@ -61,7 +61,6 @@ class ShowRestaurant extends Component {
     console.log(`${CLIENT_URL}${restaurantId}`)
     const url = `${CLIENT_URL}${restaurantId}`
 
-    console.log("did mount in showpage")
     axios.get(url)
       .then((res) => {
         console.log(res)
