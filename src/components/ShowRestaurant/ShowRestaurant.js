@@ -35,8 +35,8 @@ class ShowRestaurant extends Component {
   }
 
   handleUpdate() {
-    const restaurantId = this.props.match.params.id
-    const url = `${CLIENT_URL}${restaurantId}`
+    const restaurantId = this.props.match.params.id;
+    const url = `${CLIENT_URL}${restaurantId}/comment`;
     const restaurant = this.state.restaurant;
     restaurant.newComment = this.state.newComment
     restaurant.dateVisited = new Date().toString()
@@ -77,7 +77,7 @@ class ShowRestaurant extends Component {
 
   render() {
     return (
-      <div key = {this.state.restaurant.id} className='restaurantCard'>
+      <div key = {this.state.restaurant._id} className='restaurantCard'>
         <p className='restaurantTitle'>{this.state.restaurant.name}</p>
         <p>Date Visited: {this.state.restaurant.dateVisited}</p>
         <p>Cuisine: {this.state.restaurant.cuisine}</p>
@@ -91,6 +91,10 @@ class ShowRestaurant extends Component {
             return <Comment comment={comment} key={index} />
           }) : null } 
         </ul>
+       <div> 
+         Edit: 
+        <Link to={`${this.state.restaurant._id}/edit`}>Edit</Link>
+       </div>
         <div>
           New Comment: 
           <input type="text" value={this.state.newComment} onChange={ (item) => { 
