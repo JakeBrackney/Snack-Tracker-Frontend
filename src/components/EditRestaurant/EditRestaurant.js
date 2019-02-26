@@ -36,8 +36,8 @@ class EditRestaurant extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
-    const {dateVisited, cuisine, city, budget, accolades, snack} = this.state.restaurant 
-    axios.put('url' + this.props.match.params.id, {dateVisited, cuisine, city, budget, accolades, snack })
+    const {dateVisited, cuisine, city, budget, accolades, snacks} = this.state.restaurant 
+    axios.put('url' + this.props.match.params.id, {dateVisited, cuisine, city, budget, accolades, snacks })
     .then((result)=> {
       this.props.history.push("/restaurants" + this.props.match.params.id)
     })
@@ -45,37 +45,37 @@ class EditRestaurant extends Component {
   }
   render() {
     return (
-        <div class = "container"> 
-          <h3 class = "panel-title">EDIT RESTAURANT</h3>
-          <div class="panel-body">
+        <div className="container"> 
+          <h3 className="panel-title">EDIT RESTAURANT</h3>
+          <div className="panel-body">
               <h4><Link to={`/restaurants/${this.state.restaurant._id}`}> Restaurant List</Link></h4>
           </div>  
           <form onSubmit={this.onSubmit}>
-            <div class="form-group">
+            <div className="form-group">
               <label for="dateVisited">Date Visited:</label>
-              <input type="text" class="form-control" name="dateVisited" value={this.state.restaurant.dateVisited} onChange={this.onChange} placeholder="date visited" />
+              <input type="text" className="form-control" name="dateVisited" value={this.state.restaurant.dateVisited} onChange={this.onChange} placeholder="date visited" />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="cuisine">Cuisine:</label>
-              <input type="text" class="form-control" name="cuisine" value={this.state.restaurant.cuisine} onChange={this.onChange} placeholder="Title" />
+              <input type="text" className="form-control" name="cuisine" value={this.state.restaurant.cuisine} onChange={this.onChange} placeholder="Title" />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="city">City:</label>
-              <input type="text" class="form-control" name="city" value={this.state.restaurant.city} onChange={this.onChange} placeholder="City" />
+              <input type="text" className="form-control" name="city" value={this.state.restaurant.city} onChange={this.onChange} placeholder="City" />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="budget">Budget:</label>
-              <input type="text" class="form-control" name="budget" value={this.state.restaurant.budget} onChange={this.onChange} placeholder="Budget" />
+              <input type="text" className="form-control" name="budget" value={this.state.restaurant.budget} onChange={this.onChange} placeholder="Budget" />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="accolades">Accolades:</label>
-              <input type="text" class="form-control" name="accolades" value={this.state.restaurant.accolades} onChange={this.onChange} placeholder="Accolades" />
+              <input type="text" className="form-control" name="accolades" value={this.state.restaurant.accolades} onChange={this.onChange} placeholder="Accolades" />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="snack">Snack:</label>
-              <input type="text" class="form-control" name="snack" value={this.state.restaurant.snack} onChange={this.onChange} placeholder="snack" />
+              <input type="text" className="form-control" name="snack" value={this.state.restaurant.snack} onChange={this.onChange} placeholder="snack" />
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" className="btn btn-default">Submit</button>
           </form>      
         </div>      
     )
@@ -83,26 +83,5 @@ class EditRestaurant extends Component {
 }
        
 export default EditRestaurant; 
-
-        // {/* <h4> <Link to ={`/show/${this.state.restaurant._id}`}</Link</h4>
-        
-
-//         </div>
-//             <form> 
-//             <input type='text' name='name'/> Name  
-//                 <input type='text' name='email'/> Email
-//                 <input type='text' name='profile_picture'/> Image 
-//             </form>
-//     //   <div key={this.state.restauarant.id}>
-//         <p>Date Visited: {this.state.restaurant.dateVisited}</p>
-//         <p>Cuisine: {this.state.restaurant.cuisine}</p>
-//         <p>City: {this.state.restaurant.city}</p>
-//         <p>Budget: {this.state.restaurant.budget}</p>
-//         <p>Accolades: {this.state.restaurant.accolades}</p>
-//         <p>Snack: {this.state.restaurant.snacks}</p>
-//       </div>
-//     );
-//   }
-// } */}
 
 

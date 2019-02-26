@@ -42,8 +42,8 @@ class App extends Component {
         <main> 
           <div className ='restaurantList'>
             < Switch>
+              <Route path='/restaurants/:id/edit' component={EditRestaurant}/>
               <Route path='/restaurants/:id' render={(routerProps)=>< ShowRestaurant {...routerProps} {...this.state} />} />
-              <Route path='/restaurants/:id/edit' component = {EditRestaurant}/>
               <Route path='/' render={(routerProps)=>< RestaurantList  {...routerProps} {...this.state} restaurants={this.state.restaurants} />}/>
             </Switch>
           </div>
