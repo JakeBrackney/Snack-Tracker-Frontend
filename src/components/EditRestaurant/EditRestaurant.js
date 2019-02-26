@@ -48,7 +48,7 @@ class EditRestaurant extends Component {
         <div className="container"> 
           <h3 className="panel-title">EDIT RESTAURANT</h3>
           <div className="panel-body">
-              <h4><Link to={`/restaurants/${this.state.restaurant._id}`}> Restaurant List</Link></h4>
+              {/* <h4><Link to={`/restaurants/${this.state.restaurant._id}`}> Restaurant List</Link></h4> */}
           </div>  
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
@@ -72,8 +72,8 @@ class EditRestaurant extends Component {
               <input type="text" className="form-control" name="accolades" value={this.state.restaurant.accolades} onChange={this.onChange} placeholder="Accolades" />
             </div>
             <div className="form-group">
-              <label for="snack">Snack:</label>
-              <input type="text" className="form-control" name="snack" value={this.state.restaurant.snack} onChange={this.onChange} placeholder="snack" />
+              <label for="snacks">Snack:</label>
+              <input type="text" className="form-control" name="snacks" value={this.state.restaurant.snacks} onChange={this.onChange} placeholder="snacks" />
             </div>
             <button type="submit" className="btn btn-default">Submit</button>
           </form>      
