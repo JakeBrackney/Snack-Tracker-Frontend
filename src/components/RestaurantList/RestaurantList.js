@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './RestaurantList.css'
 
 class RestaurantList extends Component {
+
         render() {
-            console.log(this.props.restaurants)
             if(this.props.restaurants) {
             let list = this.props.restaurants.map(index => {
                 return (
