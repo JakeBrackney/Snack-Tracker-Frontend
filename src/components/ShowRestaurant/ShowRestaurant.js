@@ -35,8 +35,8 @@ class ShowRestaurant extends Component {
   }
 
   handleUpdate() {
-    const restaurantId = this.props.match.params.id
-    const url = `${CLIENT_URL}${restaurantId}`
+    const restaurantId = this.props.match.params.id;
+    const url = `${CLIENT_URL}${restaurantId}/comment`;
     const restaurant = this.state.restaurant;
     restaurant.newComment = this.state.newComment
     restaurant.dateVisited = new Date().toString()
