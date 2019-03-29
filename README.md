@@ -31,7 +31,7 @@ The application as a whole is built using a MERN stack. The front end views are 
 - react-router-dom
 - react-scripts
 
-## Instalation
+## Installation
 
 Fork and clone this repo and run the command `npm install` in your CLI. We are not accepting contributions at this time.
 
